@@ -63,6 +63,12 @@ header p {
     object-fit: cover;
 }
 
+.shamir img {
+    border-radius: 0%;
+    width: 120px;
+    height: 120px;
+}
+
 h3 {
     color: #784385;
 }
