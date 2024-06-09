@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The Enigma of the Hidden Treasure</title>
+<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.cdnfonts.com/css/new-walt-disney-font" rel="stylesheet">
+</head>
+<body>
+<header>
+    <img src="A_magical_treasure_chest_glowing_with_golden_light.png" alt="Treasure" class="treasure-img">
+    <h1>Welcome to the Enigma of the Hidden Treasure</h1>
+    <p>In the mystical land of Cryptonia, a legendary treasure lies hidden, known only to a select few. This treasure holds immense power and knowledge, capable of changing the fate of the entire world. The secret to its location has been entrusted to a group of extraordinary individuals. Realizing the danger of keeping such a potent secret in one place, they decided to use an ingenious method to protect it - the Shamir's Secret Sharing Algorithm.</p>
+</header>
+<section>
+    <h2>The Guardians of the Secret</h2>
+    <div class="guardian-container">
+        <div class="guardian">
+            <img src="Alice.jpg" alt="Alice">
+            <p>Alice</p>
+        </div>
+        <div class="guardian">
+            <img src="Spiderman.jpg" alt="Spiderman">
+            <p>Spiderman</p>
+        </div>
+        <div class="guardian">
+            <img src="Hannibal.jpg" alt="Hannibal">
+            <p>Hannibal</p>
+        </div>
+        <div class="guardian">
+            <img src="AlanTuring.jpg" alt="Alan Turing">
+            <p>Alan Turing</p>
+        </div>
+        <div class="guardian">
+            <img src="SherlockHolmes.jpg" alt="Sherlock Holmes">
+            <p>Sherlock Holmes</p>
+        </div>
+        <div class="guardian">
+            <img src="WonderWoman.jpg" alt="Wonder Woman">
+            <p>Wonder Woman</p>
+        </div>
+        <div class="guardian">
+            <img src="Batman.jpg" alt="Batman">
+            <p>Batman</p>
+        </div>
+        <div class="guardian">
+            <img src="Superman.jpg" alt="Superman">
+            <p>Superman</p>
+        </div>
+        <div class="guardian">
+            <img src="IronMan.jpg" alt="Iron Man">
+            <p>Iron Man</p>
+        </div>
+        <div class="guardian">
+            <img src="Hulk.jpg" alt="Hulk">
+            <p>Hulk</p>
+        </div>
+        <div class="guardian">
+            <img src="CaptainAmerica.jpg" alt="Captain America">
+            <p>Captain America</p>
+        </div>
+    </div>
+    <p class="algorithm-description">
+        <h2>The Shamir's Secret Sharing Algorithm</h2>
+        The Shamir's Secret Sharing Algorithm is a clever method to divide a secret into multiple parts (shares), ensuring that only a sufficient number of parts can reconstruct the secret. This algorithm enhances security by distributing the secret among multiple guardians. 
+        <br> <br> Here’s how you can use this website to encode and decode your secret:
+        <h3>How to Encode Your Secret</h3>
+        <ol>
+            <li>Enter the numerical value of your secret in the "Encoder" section.</li>
+            <li>Specify Shares and Threshold: Indicate the total number of shares you want to create and set the threshold. 
+                The threshold is the minimum number of shares required to reconstruct the secret.</li>
+            <li>Generate Shares: Click on the "Generate Shares" button. The secret will be split into the specified number of shares, each associated with a guardian. 
+                Each share will be displayed along with the name of its guardian and an image.</li>
+            <li>To decode the secret, input the shares in the "Decoder" section and click "Reconstruct Secret".</li>
+        </ol>
+        <h3>How to Decode Your Secret</h3>
+        <ol>
+            <li>Collect Shares: Gather at least the number of shares specified by the threshold. 
+                These shares can come from different guardians, 
+                but you must have at least the threshold number to reconstruct the secret.</li>
+            <li>Input Shares: In the "Decoder" section, 
+                enter each share on a new line in the provided textarea. 
+                Ensure that each share is formatted correctly, for example:
+                <br>Hannibal: (x: 3, y: 16480330010)
+                <br>Alan Turing: (x: 4, y: 14411271815)
+                <br>Sherlock Holmes: (x: 5, y: 71619513970)
+                <br>Wonder Woman: (x: 6, y: 194838334)
+                </li>
+            <li>Reconstruct the Secret: Click on the "Reconstruct Secret" button. 
+                The algorithm will use the entered shares to reconstruct and display the original secret.</li>
+        </ol>
+        
+    </p>
+</section>
+<section>
+    <h2>Encoder</h2>
+    <label for="secret">Enter Secret (numerical value):</label>
+    <input type="number" id="secret" placeholder="e.g., 1234"><br><br>
+
+    <label for="numShares">Number of Shares:</label>
+    <input type="number" id="numShares" placeholder="e.g., 10"><br><br>
+
+    <label for="threshold">Threshold (k):</label>
+    <input type="number" id="threshold" placeholder="e.g., 4"><br><br>
+    <div class="info">Note: Threshold should be 4 or more for accurate reconstruction.</div>
+    <button onclick="generateShares()">Generate Shares</button>
+
+    <h3>Shares</h3>
+    <div id="shares"></div>
+</section>
+<section>
+    <h2>Decoder</h2>
+    <label for="sharesInput">Secret shares (new line for each one):</label><br>
+    <textarea id="sharesInput" rows="10" style="width: 100%;" placeholder="Enter shares here, each on a new line. For example:&#10;Hannibal: (x: 3, y: 16480330010)&#10;Alan Turing: (x: 4, y: 14411271815)&#10;Sherlock Holmes: (x: 5, y: 71619513970)&#10;Wonder Woman: (x: 6, y: 194838334)..."></textarea><br><br>
+    <button onclick="reconstructSecret()">Reconstruct Secret</button>
+
+    <h3>Reconstructed Secret</h3>
+    <div id="reconstructedSecret"></div>
+</section>
+<footer>
+    <p class="footer-text">© 2024 Raneem Qasim. All rights reserved.</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
